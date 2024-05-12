@@ -1,0 +1,23 @@
+def minimum_coins(x, y, z):
+    total_value = x + 5 * y
+    
+    if total_value < z or z % 5 > x:
+        return -1
+    
+    five_coins_needed = z // 5
+    one_coins_needed = z % 5
+    
+    return one_coins_needed, five_coins_needed
+
+
+x = int(input())
+y = int(input())
+z = int(input())
+
+
+result = minimum_coins(x, y, z)
+if result != -1:
+    print(result[0])
+    print(result[1])
+else:
+    print(-1)
